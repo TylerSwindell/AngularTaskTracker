@@ -22,12 +22,14 @@ export class TaskService {
     return this.http.get<Task[]>(this.apiUrl);
   } 
 
-  deleteTasks(task: Task): Observable<Task> {
+  deleteTask(task: Task): Observable<Task> {
+    console.log(task);
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.delete<Task>(url);
   }
 
   updateTaskReminders(task: Task): Observable<Task> {
+    console.log(task);
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.put<Task>(url, task, httpOptions);
   }

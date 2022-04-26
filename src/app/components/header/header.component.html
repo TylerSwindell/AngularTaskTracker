@@ -1,5 +1,12 @@
 <header>
     <h1>{{title}}</h1>
     <!-- Button component -->
-    <app-button color="green" text="Add" (btnClick)="toggleAddTask()"></app-button>
+    <!-- *ngIf allows for conditional logic in HTML files  -->
+    <!-- Functions/Variables must be declared within the component.ts file of each component -->
+    <app-button 
+        *ngIf="hasRoute('/')"
+        color="{{showAddTask ? 'red' : 'green'}}"
+        text="{{showAddTask ? 'Close' : 'Add'}}"
+        (btnClick)="toggleAddTask()"
+    ></app-button>
 </header>
