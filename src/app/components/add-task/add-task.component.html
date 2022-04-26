@@ -1,0 +1,28 @@
+<form class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="text">Task</label>
+        <!-- 
+            [] are for data binding ie passing data into components 
+            while () are for event output
+            [()] this is a two way data binding meaning output and input
+        -->
+        <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task"/>
+    </div>
+    <div class="form-control">
+        <label for="day">Day & Time</label>
+        <input type="text" name="day" [(ngModel)]="day" id="day" placeholder="Add Day & Time"/>
+    </div>
+    <div class="form-control form-control-check">
+        <label for="reminder">Set Reminder</label>
+        <input type="checkbox" name="reminder" [(ngModel)]="reminder" id="reminder"/>
+    </div>
+    <input type="submit" value="Save Task" class="btn btn-block">
+</form>
+
+<!--    
+    If you type in the text box it will populate 
+    where the member variable of AddTaskComponent is referenced
+-->
+
+<!-- {{text}} -->
+ 
